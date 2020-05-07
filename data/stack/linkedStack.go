@@ -1,7 +1,7 @@
 package stack
 
 type LinkedStack struct {
-	*Stack
+	*stack
 	root *linkedElement
 }
 
@@ -17,7 +17,7 @@ func NewLinkedStack() *LinkedStack {
 
 // Initialize the LinkedStack.
 func (stack *LinkedStack) Init() *LinkedStack {
-	stack.Stack = initializeParent()
+	stack.stack = initializeParent()
 	stack.root = nil
 	return stack
 }

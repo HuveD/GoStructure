@@ -3,7 +3,7 @@ package stack
 import "errors"
 
 type ArrayStack struct {
-	*Stack
+	*stack
 	itemArray []arrayElement
 	maxSize   int
 	pointer   int
@@ -21,7 +21,7 @@ func NewArrayStack(capacity int) *ArrayStack {
 
 // Initialize the ArrayStack.
 func (stack *ArrayStack) Init(capacity int) *ArrayStack {
-	stack.Stack = initializeParent()
+	stack.stack = initializeParent()
 	stack.itemArray = make([]arrayElement, capacity)
 	stack.maxSize = capacity
 	stack.pointer = 0

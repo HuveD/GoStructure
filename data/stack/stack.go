@@ -1,22 +1,22 @@
 package stack
 
-// Queue struct
-type Stack struct {
+// Stack struct
+type stack struct {
 	size int
 }
 
-func initializeParent() *Stack {
-	parent := new(Stack)
+func initializeParent() *stack {
+	parent := new(stack)
 	parent.size = 0
 	return parent
 }
 
 // Check if the Stack is empty.
-func (stack *Stack) IsEmpty() bool {
+func (stack *stack) IsEmpty() bool {
 	return stack.size <= 0
 }
 
 // Get Item Size.
-func (stack *Stack) Size() int {
+func (stack *stack) Size() int {
 	return stack.size
 }

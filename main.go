@@ -1,6 +1,7 @@
 package main
 
 import (
+	"GoStructure/data/queue"
 	"GoStructure/data/stack"
 	"log"
 )
@@ -8,6 +9,7 @@ import (
 func main() {
 	//exampleLinkedStack()
 	//exampleArrayStack()
+	//exampleLinkedQueue()
 }
 
 //region Stack example
@@ -93,3 +95,36 @@ func exampleArrayStack() {
 }
 
 //endregion Stack example
+
+//region Queue example
+
+// Example of using LinkedQueue
+func exampleLinkedQueue() {
+	newInstance := queue.NewLinkedQueue()
+
+	newInstance.Offer("First")
+	log.Printf("Added new one, Current size is %d\n", newInstance.Size())
+
+	newInstance.Offer("Input")
+	log.Printf("Added new one, Current size is %d\n", newInstance.Size())
+
+	newInstance.Offer("First")
+	log.Printf("Added new one, Current size is %d\n", newInstance.Size())
+
+	newInstance.Offer("Out")
+	log.Printf("Added new one, Current size is %d\n", newInstance.Size())
+
+	itemSize := newInstance.Size()
+	for i := 0; i < itemSize; i++ {
+		outValue := newInstance.Peek()
+		log.Println("Peek value:", outValue, " Current size is : ", newInstance.Size())
+	}
+
+	for i := 0; i < itemSize; i++ {
+		outValue := newInstance.Poll()
+		log.Println("Poll value:", outValue, " Current size is : ", newInstance.Size())
+		log.Println("IsEmpty:", newInstance.IsEmpty())
+	}
+}
+
+//endregion Queue example
